@@ -1,0 +1,86 @@
+/* first row - country name and flag */
+.country_name_flag {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.country_name {
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: white;
+    padding: 10px;
+    padding-left: 30px;
+}
+.flag_image {
+    padding: 5px;
+}
+
+.region_name {
+    font-size: 14px;
+    text-transform: capitalize;
+    background-color: black;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+/* second line*/
+.main_details {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(166, 173, 166, 0.158);
+    margin-bottom: 10px;
+}
+
+.data_title {
+    margin: 10px;
+    background-color: rgba(36, 39, 36, 0.432);
+    text-align: center;
+    padding: 5px 75px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.data_render {
+    padding: 10px;
+    text-align: center;
+    color: black;
+}
+
+.lang {
+    margin: 5px;
+}
+
+/* third line - buttons to show border countries */
+.btn_borders {
+    margin-top: 2px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    color: white;
+    font-size: 25px;
+    border-radius: 5px;
+    outline: none;
+    background-color: rgba(0,0,0,0.4);
+}
+.btn_borders:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.borders_container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 15px;
+    border: 1px solid grey;
+}
+
+.border_countries {
+    font-size: 14px;
+    padding: 10px;
+    margin: 8px;
+}
+

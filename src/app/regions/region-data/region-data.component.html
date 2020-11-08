@@ -1,6 +1,10 @@
-<div *ngFor="let con of countryName">
-    <div>
-        <img src="{{con.flag}}" width="300px">
+<div class="container countriesContainer">
+    <div *ngFor="let con of countryName">
+        <!-- <div> -->
+        <div class="country" routerLink="/country-data/{{con.name}}">
+            <div class="name"> {{con.name}}</div>
+            <img src="{{con.flag}}" width="300px">
+        </div>
+        <!-- </div> -->
     </div>
-    {{con.name}}
 </div>

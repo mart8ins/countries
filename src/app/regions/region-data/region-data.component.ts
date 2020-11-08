@@ -20,7 +20,7 @@ export class RegionDataComponent implements OnInit {
     let url = `https://restcountries.eu/rest/v2/region/${region}`;
 
     // using dataServices method "GET" API data for needed region
-    this.dataService.getRegions(url)
+    this.dataService.getData(url)
       .subscribe((response) => {
         console.log(response[0].flag)
         // looping through response data and storing objects in new array - pushing {countries name, countries flag}

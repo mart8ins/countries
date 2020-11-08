@@ -1,0 +1,33 @@
+.countriesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.country {
+    position: relative;
+    z-index: 0;
+    margin-top: 30px;
+    box-shadow: 2px 2px 8px black;
+    text-align: center;
+    padding: 5px;   
+    background-color: rgba(0,0,0,0.1); 
+    font-weight: bold; 
+}
+
+.name {
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+.country:hover {
+    transform: scale(1.2);
+    z-index: 3;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.8);
+    padding: 10px;
+    color: white;
+}
+
+

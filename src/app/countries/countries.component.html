@@ -1,0 +1,74 @@
+<div class="container">
+    <div *ngFor="let data of countryData">
+        <div class="row">
+            <div class="col-12">
+                <div class="country_name_flag">
+                    <div class="country_name">
+                        {{data.name}} <span class="region_name">{{data.region}}</span>
+                    </div>
+                    <div class="flag_image">
+                        <img src="{{data.flag}}" width="100px">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="main_details">
+                    <div>
+                        <div class="data_title">
+                            Region
+                        </div>
+                        <div class="data_render">
+                            {{data.region}}
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="data_title">
+                            Capital
+                        </div>
+                        <div class="data_render">
+                            {{data.capital}}
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="data_title">
+                            Currencie
+                        </div>
+                        <div *ngFor="let currencie of data.currencies" class="data_render">
+                            <span>{{currencie.name}} ({{currencie.code}}/{{currencie.symbol}})</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="data_title">
+                            Language
+                        </div>
+                        <div class="data_render">
+                            <span class="lang" *ngFor="let lang of data.languages">{{lang.name}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- to show border countries-->
+        <div class="row">
+            <div class="col-6">
+                <button (click)="showBorderCountries()" class="btn_borders">Show border countries</button>
+                <div *ngIf="showBrorders" class="borders_container">
+                    <div class="border_countries" *ngFor="let borderCountry of data.borders">
+                        {{borderCountry}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6">
+                blblblbbl
+            </div>
+        </div>
+
+
+    </div>
+</div>

@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegionsComponent } from './regions/regions.component';
 import { RegionDataComponent } from './regions/region-data/region-data.component';
+import { CountriesComponent } from './countries/countries.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegionsComponent,
-    RegionDataComponent
+    RegionDataComponent,
+    CountriesComponent
   ],
   imports: [
     BrowserModule,

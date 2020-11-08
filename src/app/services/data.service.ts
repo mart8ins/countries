@@ -9,8 +9,7 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   // get all data from API
-  getRegions(url) {
+  getData(url) {
     return this.http.get(url);
   }
-
 }
