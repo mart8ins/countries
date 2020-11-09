@@ -16,21 +16,22 @@ export class CountriesComponent implements OnInit {
   countryName: string;
   url: string;
   showBrorders = false;
+  currencieCode: string;
+
 
 
   ngOnInit(): void {
     this.countryName = this.activatedRoute.params["value"].country;
-    // this.url = `https://restcountries.eu/rest/v2/name/${this.countryName}`;
     this.url = `https://restcountries.eu/rest/v2/name/${this.countryName}?fullText=true`;
 
     this.dataService.getData(this.url)
       .subscribe((resp) => {
         this.countryData = resp;
-        console.log(resp)
       })
-    console.log(this.countryData)
+
     setTimeout(() => {
       this.getBorderCountries();
+      this.currencieCode = this.getCurrencieCode();
     }, 500);
   }
 
@@ -46,7 +47,17 @@ export class CountriesComponent implements OnInit {
     borderCountries.forEach((item) => {
       this.countryBorderCountries.push(item);
     })
-    console.log(this.countryBorderCountries, "???")
+  }
+
+  // getting chosen country currency code which will be used in currency-rates component to get exchange rates for this currency code
+  getCurrencieCode() {
+    let currencyCode: string;
+    this.countryData.forEach((item) => {
+      item.currencies.forEach((curr) => {
+        currencyCode = curr.code;
+      })
+    })
+    return currencyCode;
   }
 
 
@@ -54,5 +65,26 @@ export class CountriesComponent implements OnInit {
   showBorderCountries() {
     !this.showBrorders ? this.showBrorders = true : this.showBrorders = false;
   }
+
+
+
+
+  // getCurrencieRates() {
+  //   let apikey = '9f9c11f1e73342eeb2961bc7fa0d25b9';
+  //   if (this.currencieCode) {
+  //     let urlAll = `https://api.currencyfreaks.com/latest?apikey=${apikey}&symbols=${this.currencieCode}`;
+  //     this.dataService.getData(urlAll)
+  //       .subscribe((resp) => {
+  //         this.currencieRatesDate = resp['date'];
+  //         console.log(this.currencieRatesDate)
+  //         this.baseCountry = resp['base'];
+  //         this.actualCountry = this.currencieCode;
+  //         console.log(this.actualCountry)
+  //         this.rate = resp['rates'][this.currencieCode];
+  //         console.log(this.rate)
+  //       })
+  //   }
+  // }
+
 
 }

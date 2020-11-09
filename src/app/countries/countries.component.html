@@ -65,7 +65,14 @@
             </div>
 
             <div class="col-6">
-                blblblbbl
+                <div>
+                    <div class="currencie_rates_title">Currencie rates for <span
+                            *ngFor="let currencie of data.currencies">{{currencie.code}} / For one USD</span>
+                    </div>
+                    <div>
+                        <app-currency-rates [currencie]="currencieCode"></app-currency-rates>
+                    </div>
+                </div>
             </div>
         </div>
 

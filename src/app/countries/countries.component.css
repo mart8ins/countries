@@ -84,3 +84,12 @@
     margin: 8px;
 }
 
+.currencie_rates_title {
+    font-size: 21px;
+    font-style: italic;
+    margin-left: 10px;
+}
+.currencie_rates_title span {
+    float: right;
+    margin-right: 15px;
+}

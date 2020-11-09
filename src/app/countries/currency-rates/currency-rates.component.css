@@ -1,0 +1,18 @@
+.rates {
+    width: 100%;
+    word-wrap: break-word;
+    padding:10px;
+    background-color: rgba(166, 173, 166, 0.158);
+}
+.currentRate {
+    width: 50%;
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+.currencieRateDate {
+    text-align: center;
+    padding: 10px;
+}

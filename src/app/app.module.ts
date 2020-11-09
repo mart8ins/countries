@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { RegionsComponent } from './regions/regions.component';
 import { RegionDataComponent } from './regions/region-data/region-data.component';
 import { CountriesComponent } from './countries/countries.component';
+import { CurrencyRatesComponent } from './countries/currency-rates/currency-rates.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegionsComponent,
     RegionDataComponent,
-    CountriesComponent
+    CountriesComponent,
+    CurrencyRatesComponent
   ],
   imports: [
     BrowserModule,
