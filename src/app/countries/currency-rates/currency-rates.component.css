@@ -2,14 +2,15 @@
     width: 100%;
     word-wrap: break-word;
     padding:10px;
-    background-color: rgba(166, 173, 166, 0.158);
+    background-color:  rgba(44, 104, 160, 0.644);
 }
 .currentRate {
     width: 50%;
     margin: 0 auto;
-    background-color: black;
-    color: white;
-    padding: 10px;
+    background-color: rgba(247, 196, 196, 0.808);
+    font-weight: bold;
+    font-size: 22px;
+    padding: 20px 0px;
     text-align: center;
 }
 .currencieRateDate {

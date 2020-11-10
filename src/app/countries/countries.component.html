@@ -1,5 +1,7 @@
 <div class="container">
     <div *ngFor="let data of countryData">
+
+        <!-- header row -->
         <div class="row">
             <div class="col-12">
                 <div class="country_name_flag">
@@ -12,6 +14,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- main details row -->
         <div class="row">
             <div class="col-12">
                 <div class="main_details">
@@ -53,7 +57,7 @@
             </div>
         </div>
 
-        <!-- to show border countries-->
+        <!-- to show border countries and currency row-->
         <div class="row">
             <div class="col-6">
                 <button (click)="showBorderCountries()" class="btn_borders">Show border countries</button>
@@ -69,13 +73,33 @@
                         </div>
                     </div>
                     <ng-template #elseBlock>
-                        There is no border countries for this country.
+                        <div class="noBorders">
+                            There is no border countries for this country.
+                        </div>
                     </ng-template>
-
                 </div>
 
+                <div class="languages">
+                    <h6>Used languages</h6>
+                    <div *ngFor="let data of countryData">
+                        <ul *ngFor="let lang of data.languages">
+                            <li>
+                                {{lang.name}} ( <span> native name</span>: {{lang.nativeName}})
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-
+                <div class="regionBlock">
+                    <h6>Countrys regional block</h6>
+                    <div *ngFor="let data of countryData">
+                        <ul *ngFor="let regBlock of data.regionalBlocs">
+                            <li>
+                                {{regBlock.name}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="col-6">
@@ -88,8 +112,8 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
-
-
     </div>
 </div>

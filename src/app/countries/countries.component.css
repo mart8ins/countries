@@ -65,10 +65,10 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     outline: none;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(44, 104, 160, 0.644);
 }
 .btn_borders:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(28, 79, 126, 0.849);
 }
 
 .borders_container {
@@ -76,7 +76,9 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     padding: 15px;
-    border: 1px solid grey;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgba(247, 196, 196, 0.808);
 }
 
 .border_countries {
@@ -98,4 +100,61 @@
 .currencie_rates_title span {
     float: right;
     margin-right: 15px;
+}
+
+.noBorders {
+    
+    color: white;
+    letter-spacing: 4px;
+    background-color: rgba(0, 0, 0, 0.589);
+    padding: 10px;
+    text-align: center;
+}
+
+/* languages */ 
+.languages {
+    margin-top: 20px;
+    background-color:  rgba(44, 104, 160, 0.644);
+    padding: 10px;
+}
+
+.languages h6 {
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+.languages div {
+    background-color: white;
+    padding: 10px;
+}
+.languages li {
+    list-style-type: none;
+}
+.languages span {
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+/* region block */
+.regionBlock {
+    margin-top: 20px;
+    background-color:  rgba(44, 104, 160, 0.644);
+    padding: 10px;
+}
+
+.regionBlock h6 {
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.regionBlock div {
+    background-color: white;
+    padding: 15px;
+}
+
+.regionBlock li {
+    list-style-type: none;
 }

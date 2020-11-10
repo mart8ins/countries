@@ -30,6 +30,7 @@ export class CountriesComponent implements OnInit {
     this.dataService.getData(this.url)
       .subscribe((resp) => {
         this.countryData.push(resp[0]);
+        console.log(this.countryData)
       })
 
     setTimeout(() => {
