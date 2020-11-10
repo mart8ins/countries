@@ -58,15 +58,29 @@
             <div class="col-6">
                 <button (click)="showBorderCountries()" class="btn_borders">Show border countries</button>
                 <div *ngIf="showBrorders" class="borders_container">
-                    <div class="border_countries" *ngFor="let borderCountry of data.borders">
-                        {{borderCountry}}
+
+                    <div *ngIf="countryCodeWithFlag.length > 0; else elseBlock" class="border_countries">
+                        <div class="border_country"
+                            *ngFor="let borderCountry of countryCodeWithFlag">
+                            <div>
+                                <h3>{{borderCountry.code}}</h3>
+                                <img src="{{borderCountry.flag}}" width="50px">
+                            </div>
+                        </div>
                     </div>
+                    <ng-template #elseBlock>
+                        There is no border countries for this country.
+                    </ng-template>
+
                 </div>
+
+
+
             </div>
 
             <div class="col-6">
                 <div>
-                    <div class="currencie_rates_title">Currencie rates for <span
+                    <div class="currencie_rates_title">Currencie rates<span
                             *ngFor="let currencie of data.currencies">{{currencie.code}} / For one USD</span>
                     </div>
                     <div>

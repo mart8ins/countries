@@ -62,7 +62,8 @@
     border: none;
     color: white;
     font-size: 25px;
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     outline: none;
     background-color: rgba(0,0,0,0.4);
 }
@@ -82,10 +83,15 @@
     font-size: 14px;
     padding: 10px;
     margin: 8px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.border_country {
+    margin: 10px;
 }
 
 .currencie_rates_title {
-    font-size: 21px;
+    font-size: 18px;
     font-style: italic;
     margin-left: 10px;
 }

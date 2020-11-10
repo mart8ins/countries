@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { stringify } from 'querystring';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -11,12 +12,14 @@ export class CountriesComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private dataService: DataService) { }
 
-  countryData;
-  countryBorderCountries: any[] = [];
+  countryData: any[] = [];
   countryName: string;
   url: string;
   showBrorders = false;
   currencieCode: string;
+
+  countryBorderCountries: [] = [];
+  countryCodeWithFlag: any[] = [];
 
 
 
@@ -26,28 +29,34 @@ export class CountriesComponent implements OnInit {
 
     this.dataService.getData(this.url)
       .subscribe((resp) => {
-        this.countryData = resp;
+        this.countryData.push(resp[0]);
       })
 
     setTimeout(() => {
       this.getBorderCountries();
       this.currencieCode = this.getCurrencieCode();
     }, 500);
+
+
   }
 
 
   // get country border countries name codes
   getBorderCountries() {
-    let borderCountries: [];
-    if (this.countryData.length > 0) {
-      borderCountries = this.countryData.map((data) => {
-        return data.borders;
+    let borderCountries;
+
+    // getting countrys border countrys array
+    if (this.countryData && this.countryData.length > 0) {
+      this.countryData.forEach((data) => {
+        borderCountries = data.borders;
       })
     }
-    borderCountries.forEach((item) => {
-      this.countryBorderCountries.push(item);
-    })
+    this.countryBorderCountries = borderCountries;
+
+    // to get border countries flag
+    this.getBorderCountriesFlags(this.countryBorderCountries);
   }
+
 
   // getting chosen country currency code which will be used in currency-rates component to get exchange rates for this currency code
   getCurrencieCode() {
@@ -67,24 +76,33 @@ export class CountriesComponent implements OnInit {
   }
 
 
+  getBorderCountriesFlags(countries): void {
+    // getting all countries
+    let currentCodes = countries;
 
+    // api where gets all countries
+    let urlAll = 'https://restcountries.eu/rest/v2/all';
 
-  // getCurrencieRates() {
-  //   let apikey = '9f9c11f1e73342eeb2961bc7fa0d25b9';
-  //   if (this.currencieCode) {
-  //     let urlAll = `https://api.currencyfreaks.com/latest?apikey=${apikey}&symbols=${this.currencieCode}`;
-  //     this.dataService.getData(urlAll)
-  //       .subscribe((resp) => {
-  //         this.currencieRatesDate = resp['date'];
-  //         console.log(this.currencieRatesDate)
-  //         this.baseCountry = resp['base'];
-  //         this.actualCountry = this.currencieCode;
-  //         console.log(this.actualCountry)
-  //         this.rate = resp['rates'][this.currencieCode];
-  //         console.log(this.rate)
-  //       })
-  //   }
-  // }
+    let countryCodeFlag: {
+      code: string
+      flag: string
+    }
+
+    this.dataService.getData(urlAll)
+      .subscribe(resp => {
+        let allCountries = resp;
+        for (let i = 0; i < currentCodes.length; i++) {
+          for (let j in allCountries) {
+            // console.log(allCountries[j].alpha3Code, 'not')
+            if (countries[i] == allCountries[j].alpha3Code) {
+              countryCodeFlag = { code: countries[i], flag: allCountries[j].flag };
+              this.countryCodeWithFlag.push(countryCodeFlag)
+            }
+          }
+        }
+      })
+  }
+
 
 
 }

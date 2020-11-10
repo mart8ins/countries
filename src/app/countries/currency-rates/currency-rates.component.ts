@@ -8,6 +8,7 @@ import { DataService } from '../../services/data.service'
 })
 export class CurrencyRatesComponent implements OnInit {
 
+  // input for chosen countrys currency code to use in new api call for different service
   @Input('currencie') currCode: string;
 
   constructor(private dataService: DataService) { }
@@ -33,7 +34,6 @@ export class CurrencyRatesComponent implements OnInit {
     if (this.currCode) {
       this.dataService.getData(urlAll)
         .subscribe((resp) => {
-          console.log(resp)
           this.currencieRatesDate = resp['date'];
           this.baseCountry = resp['base'];
           this.actualCountry = this.currCode;
