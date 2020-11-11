@@ -2,16 +2,17 @@
     width: 100%;
     word-wrap: break-word;
     padding:10px;
-    background-color:  rgba(44, 104, 160, 0.644);
+    background-color:  rgba(238, 240, 241, 0.644);
 }
 .currentRate {
     width: 50%;
     margin: 0 auto;
-    background-color: rgba(247, 196, 196, 0.808);
+    background-color: rgba(214, 149, 149, 0.808);
     font-weight: bold;
     font-size: 22px;
     padding: 20px 0px;
     text-align: center;
+    color: white;
 }
 .currencieRateDate {
     text-align: center;

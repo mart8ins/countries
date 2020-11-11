@@ -1,17 +1,36 @@
 .row {
-    border: 1px solid black;
+    position: relative;
+    width: 400px;
+    border-radius: 30px;
+    /* border: 1px solid black; */
     text-transform: uppercase;
     display: flex;
     justify-content: center;
-    font-size: 75px;
+    font-size: 65px;
     letter-spacing: 4px;
     font-weight: bold;
-    padding: 10px;
-    margin: 25px;
+    padding: 5px;
+    margin: 50px auto;
     color: white;
-    background-color: rgba(0,0,0, 0.9);
+    background-color: rgba(0,0,0, 0.3);
 }
 .row:hover {
     background-color: rgba(0,0,0, 0.7) ;
     cursor: pointer;
+}
+
+.globe {
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    border-radius: 55%;
+    transition: 1s;
+    background-color: rgba(59, 59, 238, 0.877);
+    box-shadow: 3px 3px 322px rgba(12, 12, 155, 0.904),
+    inset 15px 5px 265px 260px rgb(235, 229, 229);
+}
+.globe:hover {
+    box-shadow: 223px 223px 233px 200px  rgba(12, 12, 155, 0.904),
+    inset 223px 223px 233px 200px rgba(12, 12, 155, 0.904);
+    background-color: rgba(39, 39, 240, 0.699);
 }

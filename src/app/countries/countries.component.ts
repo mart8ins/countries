@@ -37,8 +37,6 @@ export class CountriesComponent implements OnInit {
       this.getBorderCountries();
       this.currencieCode = this.getCurrencieCode();
     }, 500);
-
-
   }
 
 
@@ -103,7 +101,4 @@ export class CountriesComponent implements OnInit {
         }
       })
   }
-
-
-
 }
