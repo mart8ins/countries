@@ -54,6 +54,15 @@
     margin: 5px;
 }
 
+@keyframes borderA {
+    0% {
+        color: black;
+    }
+    100% {
+        color: white;
+    }
+}
+
 /* third line - buttons to show border countries */
 .btn_borders {
     margin-top: 2px;
@@ -65,10 +74,15 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     outline: none;
-    background-color: rgba(44, 104, 160, 0.644);
+    background-color: rgba(33, 143, 29, 0.911);
+    transition: 0.5s;
+    animation: borderA 3s infinite;
+    
 }
+
 .btn_borders:hover {
     background-color: rgba(28, 79, 126, 0.849);
+    
 }
 
 .borders_container {
@@ -103,7 +117,6 @@
 }
 
 .noBorders {
-    
     color: white;
     letter-spacing: 4px;
     background-color: rgba(0, 0, 0, 0.589);
@@ -112,23 +125,23 @@
 }
 
 /* languages */ 
-.languages {
+.languages, .subregion, .population {
     margin-top: 20px;
     background-color:  rgba(44, 104, 160, 0.644);
-    padding: 10px;
+    padding: 5px;
 }
 
-.languages h6 {
+.languages h6, .subregion h6, .population h6 {
     text-transform: uppercase;
     color: white;
     font-weight: bold;
     letter-spacing: 3px;
 }
-.languages div {
+.languages div, .subregion div, .population div {
     background-color: white;
     padding: 10px;
 }
-.languages li {
+.languages li, .subregion li, .population li {
     list-style-type: none;
 }
 .languages span {
@@ -140,7 +153,7 @@
 .regionBlock {
     margin-top: 20px;
     background-color:  rgba(44, 104, 160, 0.644);
-    padding: 10px;
+    padding: 5px;
 }
 
 .regionBlock h6 {
@@ -152,9 +165,12 @@
 
 .regionBlock div {
     background-color: white;
-    padding: 15px;
+    padding: 5px;
 }
 
 .regionBlock li {
     list-style-type: none;
+}
+.regionBlock_not {
+    text-align: center;
 }

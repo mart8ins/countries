@@ -60,6 +60,72 @@
         <!-- to show border countries and currency row-->
         <div class="row">
             <div class="col-6">
+
+
+                <div class="languages">
+                    <h6>Used languages</h6>
+                    <div *ngFor="let data of countryData">
+                        <ul *ngFor="let lang of data.languages">
+                            <li>
+                                {{lang.name}} ( <span> native name</span>: {{lang.nativeName}})
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="regionBlock">
+                    <h6>Countrys regional block</h6>
+                    <div *ngFor="let data of countryData">
+                        <div *ngIf="data.regionalBlocs.length > 0; else regElse">
+                            <ul *ngFor="let regBlock of data.regionalBlocs">
+                                <li>
+                                    {{regBlock.name}}
+                                </li>
+                            </ul>
+                        </div>
+                        <ng-template #regElse>
+                            <div class="regionBlock_not">
+                                There is no regional block for this country
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+
+                <div class="subregion">
+                    <h6>Subregion</h6>
+                    <div>
+                        <ul *ngFor="let data of countryData">
+                            <li>
+                                {{data.subregion}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="population">
+                    <h6>Population</h6>
+                    <div>
+                        <ul *ngFor="let data of countryData">
+                            <li>
+                                {{data.population}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-6">
+                <div>
+                    <div class="currencie_rates_title">Currencie rates<span
+                            *ngFor="let currencie of data.currencies">{{currencie.code}} / For one USD</span>
+                    </div>
+                    <div>
+                        <app-currency-rates [currencie]="currencieCode"></app-currency-rates>
+                    </div>
+                </div>
+
+
                 <button (click)="showBorderCountries()" class="btn_borders">Show border countries</button>
                 <div *ngIf="showBrorders" class="borders_container">
 
@@ -77,39 +143,6 @@
                             There is no border countries for this country.
                         </div>
                     </ng-template>
-                </div>
-
-                <div class="languages">
-                    <h6>Used languages</h6>
-                    <div *ngFor="let data of countryData">
-                        <ul *ngFor="let lang of data.languages">
-                            <li>
-                                {{lang.name}} ( <span> native name</span>: {{lang.nativeName}})
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="regionBlock">
-                    <h6>Countrys regional block</h6>
-                    <div *ngFor="let data of countryData">
-                        <ul *ngFor="let regBlock of data.regionalBlocs">
-                            <li>
-                                {{regBlock.name}}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6">
-                <div>
-                    <div class="currencie_rates_title">Currencie rates<span
-                            *ngFor="let currencie of data.currencies">{{currencie.code}} / For one USD</span>
-                    </div>
-                    <div>
-                        <app-currency-rates [currencie]="currencieCode"></app-currency-rates>
-                    </div>
                 </div>
             </div>
 
