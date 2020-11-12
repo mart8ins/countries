@@ -1,3 +1,6 @@
+# About
+First project using REST API. Showing data about world countries. Consuming and displaying data from https://restcountries.eu/  and little bit form https://currencyfreaks.com/
+
 # CountriesSearch
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
